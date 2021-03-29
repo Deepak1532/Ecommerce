@@ -1,9 +1,9 @@
 import React from 'react'
-import { isAuthenticate } from '../auth'
-import Navbar from '../component/Navbar'
+import { isAuthenticated } from '../auth'
+import Navbar from '../layout/Navbar'
 
 function Userdashboard() {
-    const {user:{name,email,role}} = isAuthenticate()
+    const {user:{name,email,role}} = isAuthenticated()
     return (
         <div>
             <Navbar/>

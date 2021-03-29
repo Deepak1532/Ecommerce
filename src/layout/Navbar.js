@@ -39,6 +39,20 @@ const Navbar=({history})=> {
               </li>
                 </Fragment>
               )}
+
+              {isAuthenticated() && isAuthenticated().user.role===0 && (
+                <li>
+                <Link to="/user/dashboard">
+                 Profile</Link>
+              </li>
+              )}
+
+{isAuthenticated() && isAuthenticated().user.role===1 && (
+                <li>
+                <Link to="/admin/dashboard">
+                 Admin Dashboard</Link>
+              </li>
+              )}
               
               {isAuthenticated()&&(
                 <Fragment>
