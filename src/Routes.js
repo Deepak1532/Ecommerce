@@ -12,6 +12,7 @@ import Resetpassword from './user/Resetpassword'
 import Signin from './user/Signin'
 import Signup from './user/Signup'
 import Userdashboard from './user/UserDashboard'
+import AddCategory from './admin/AddCategory'
 
 const Routes=()=> {
     return (
@@ -28,6 +29,7 @@ const Routes=()=> {
 
                     <PrivateRoute exact path="/user/dashboard" component={Userdashboard} />
                     <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
+                    <AdminRoute exact path="/create/category" component={AddCategory} />
                     {/* <Route exact path="/change/password/:token" component={ChangePassword} /> */}
 
                 </Switch>
