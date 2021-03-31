@@ -13,6 +13,7 @@ import Signin from './user/Signin'
 import Signup from './user/Signup'
 import Userdashboard from './user/UserDashboard'
 import AddCategory from './admin/AddCategory'
+import AddProduct from './admin/AddProduct'
 
 const Routes=()=> {
     return (
@@ -30,6 +31,8 @@ const Routes=()=> {
                     <PrivateRoute exact path="/user/dashboard" component={Userdashboard} />
                     <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
                     <AdminRoute exact path="/create/category" component={AddCategory} />
+                    <AdminRoute exact path="/create/product" component={AddProduct} />
+
                     {/* <Route exact path="/change/password/:token" component={ChangePassword} /> */}
 
                 </Switch>
