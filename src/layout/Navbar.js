@@ -11,10 +11,10 @@ const Navbar=({history})=> {
           {/* header-bot*/}
           <div className="col-md-4 logo_agile">
             <h1>
-              <Link to="index.html">
+              <Link to="/">
                 <span>E</span>commerce
                 
-                <img src="images/logo2.png" alt=" " />
+                <img src="/images/logo2.png" alt=" " />
               </Link>
             </h1>
           </div>

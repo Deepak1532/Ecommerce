@@ -16,7 +16,7 @@ const AddProduct=()=> {
         product_image:'',
         loading:false,
         error:'',
-        createdProduct:'',
+        success:false,
         redirectToProfile:false,
         formData:''
     })
@@ -29,7 +29,7 @@ const AddProduct=()=> {
         quantity,
         loading,
         error,
-        createdProduct,
+        success,
         redirectToProfile,
         formData
 
@@ -67,7 +67,7 @@ const AddProduct=()=> {
             }else{
                 setValues({
                    ...values,name:'',description:'',product_image:'',price:'',quantity:'',
-                   loading:false,createdProduct:data.name 
+                   loading:false,success:true 
                 });
             }
 
@@ -93,7 +93,7 @@ const AddProduct=()=> {
         <h3 className="agileinfo_sign">Add Product</h3>
         {showError()}
         {showSuccess()}
-        <form encType="multipart/form-data">
+        <form>
             <div className="styled-input agile-styled-input-top">
     <input type="text" placeholder="Product Name" name="Name" required="required" onChange={handleChange('name')} value={name} />
             </div>
@@ -164,8 +164,8 @@ const AddProduct=()=> {
  
  );
  const showSuccess=()=>(
-     <div className="alert alert-info" style={{display:createdProduct ? '':'none'}}>
-      <h2>{`${createdProduct}`} is created!</h2>
+     <div className="alert alert-info" style={{display:success ? '':'none'}}>
+      <h2>Product is created!</h2>
      </div>
      
      );

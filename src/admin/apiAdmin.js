@@ -31,8 +31,8 @@ export const createProduct=(userId,token,product)=>{
     .then(response=>{
         return response.json();
     })
-    .catch(err=>{
-        console.log(err);
+    .catch(error=>{
+        console.log(error);
     });
 };
 

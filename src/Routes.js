@@ -14,6 +14,7 @@ import Signup from './user/Signup'
 import Userdashboard from './user/UserDashboard'
 import AddCategory from './admin/AddCategory'
 import AddProduct from './admin/AddProduct'
+import Products from './components/Products'
 
 const Routes=()=> {
     return (
@@ -23,7 +24,7 @@ const Routes=()=> {
                     <Route exact path="/" component={Homes} />
                     <Route exact path="/signin" component={Signin} />
                     <Route exact path="/signup" component={Signup} />
-
+                    <Route exact path="/products" component={Products}/>
                     <Route exact path="/email/confirmation/:token" component={Confirm} />
                     <Route exact path="/forget/password" component={Forgetpassword} />
                     <Route exact path="/reset/password/:token" component={Resetpassword} />
@@ -32,6 +33,7 @@ const Routes=()=> {
                     <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
                     <AdminRoute exact path="/create/category" component={AddCategory} />
                     <AdminRoute exact path="/create/product" component={AddProduct} />
+
 
                     {/* <Route exact path="/change/password/:token" component={ChangePassword} /> */}
 
