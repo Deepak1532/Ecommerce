@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import {Link,withRouter} from 'react-router-dom'
-
+import {itemTotal} from '../components/cartApi'
 import {signout,isAuthenticated} from '../auth';
 
 const Navbar=({history})=> {
@@ -79,13 +79,11 @@ const Navbar=({history})=> {
             {/* cart details */}
             <div className="top_nav_right">
               <div className="wthreecartaits wthreecartaits2 cart cart box_1">
-                <form action="#" method="post" className="last">
-                  <input type="hidden" name="cmd" defaultValue="_cart" />
-                  <input type="hidden" name="display" defaultValue={1} />
-                  <button className="w3view-cart" type="submit" name="submit" value>
-                    <i className="fa fa-cart-arrow-down" aria-hidden="true" />
-                  </button>
-                </form>
+               
+               <Link to="/cart"><button  className="w3view-cart">
+                 <i className="fa fa-cart-arrow-down"></i>
+                 </button> </Link>
+              <sup style={{backgroundColor:"orange",fontSize:'15px' ,padding:'3px',borderRadius:'50%'}}><small>{itemTotal()}</small></sup>
               </div>
             </div>
             {/* //cart details */}

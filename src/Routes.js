@@ -15,6 +15,7 @@ import Userdashboard from './user/UserDashboard'
 import AddCategory from './admin/AddCategory'
 import AddProduct from './admin/AddProduct'
 import Products from './components/Products'
+import Cart from './components/Cart'
 
 const Routes=()=> {
     return (
@@ -25,6 +26,7 @@ const Routes=()=> {
                     <Route exact path="/signin" component={Signin} />
                     <Route exact path="/signup" component={Signup} />
                     <Route exact path="/products" component={Products}/>
+                    <Route exact path="/cart" component={Cart}/>
                     <Route exact path="/email/confirmation/:token" component={Confirm} />
                     <Route exact path="/forget/password" component={Forgetpassword} />
                     <Route exact path="/reset/password/:token" component={Resetpassword} />
