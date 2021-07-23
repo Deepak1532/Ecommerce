@@ -16,6 +16,8 @@ import AddCategory from './admin/AddCategory'
 import AddProduct from './admin/AddProduct'
 import Products from './components/Products'
 import Cart from './components/Cart'
+import Search from './components/Search'
+import Navbar from './layout/Navbar'
 
 const Routes=()=> {
     return (
@@ -30,6 +32,7 @@ const Routes=()=> {
                     <Route exact path="/email/confirmation/:token" component={Confirm} />
                     <Route exact path="/forget/password" component={Forgetpassword} />
                     <Route exact path="/reset/password/:token" component={Resetpassword} />
+                    <Route exact path="/showproduct/:keyword" component={Homes}/>
 
                     <PrivateRoute exact path="/user/dashboard" component={Userdashboard} />
                     <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />

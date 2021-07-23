@@ -1,9 +1,27 @@
-import React, { Fragment } from 'react'
-import {Link,withRouter} from 'react-router-dom'
+import React, { Fragment,useState } from 'react'
+import {Link,withRouter,Route} from 'react-router-dom'
 import {itemTotal} from '../components/cartApi'
 import {signout,isAuthenticated} from '../auth';
+import Search from '../components/Search';
 
-const Navbar=({history})=> {
+const Navbar=({keyword,history})=> {
+
+  const [searchText, setSearchText] = useState('');
+    const [proposedTags, setProposedTags] = useState([]);
+
+    const handleChange = e => {
+        const val = e.target.value;
+        setSearchText(val);
+
+        async function fetchTags() {
+            const res = await fetch(`getproduct/${keyword}/asc`);
+            res.json()
+                .then(res => setProposedTags(res))
+                .catch(err => console.log(err));
+        }
+
+        val.length ? fetchTags() : setProposedTags([]);
+    };
     return (
         <div>
             <div className="header-bot">
@@ -65,12 +83,14 @@ const Navbar=({history})=> {
 
               
             </ul>
+
+            {/* <Route  render={({history})=> <Search history={history} />}/> */}
             {/* //header lists */}
             {/* search */}
             <div className="agileits_search">
               <form action="#" method="post">
-                <input name="Search" type="search" placeholder="How can we help you today?" required />
-                <button type="submit" className="btn btn-default" aria-label="Left Align">
+                <input name="Search" type="search" value={searchText} onChange={handleChange} placeholder="How can we help you today?" required />
+                <button type="submit" tags={proposedTags} className="btn btn-default" aria-label="Left Align">
                   <span className="fa fa-search" aria-hidden="true"> </span>
                 </button>
               </form>
